@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140118180755) do
 
-  create_table "tweets", force: true do |t|
+  create_table "zweets", force: true do |t|
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"

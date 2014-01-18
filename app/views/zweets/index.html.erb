@@ -1,0 +1,27 @@
+<h1>Listing zweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zweets.each do |zweet| %>
+      <tr>
+        <td><%= zweet.status %></td>
+        <td><%= link_to 'Show', zweet %></td>
+        <td><%= link_to 'Edit', edit_zweet_path(zweet) %></td>
+        <td><%= link_to 'Destroy', zweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zweet', new_zweet_path %>
