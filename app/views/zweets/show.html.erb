@@ -7,8 +7,8 @@
 
 <p>
   <strong>Zombie:</strong>
-  <%= @zweet.zombie %>
+  <%= link_to @zweet.zombie.name, zombie_path(@zweet.zombie) %>
 </p>
 
 <%= link_to 'Edit', edit_zweet_path(@zweet) %> |
-<%= link_to 'Back', zweets_path %>
+<%= link_to 'List of zweets', zweets_path %>
