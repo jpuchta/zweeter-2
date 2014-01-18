@@ -18,7 +18,7 @@ class ZweetsControllerTest < ActionController::TestCase
 
   test "should create zweet" do
     assert_difference('Zweet.count') do
-      post :create, zweet: { status: @zweet.status }
+      post :create, zweet: { status: @zweet.status, zombie_id: @zweet.zombie_id }
     end
 
     assert_redirected_to zweet_path(assigns(:zweet))
@@ -35,7 +35,7 @@ class ZweetsControllerTest < ActionController::TestCase
   end
 
   test "should update zweet" do
-    patch :update, id: @zweet, zweet: { status: @zweet.status }
+    patch :update, id: @zweet, zweet: { status: @zweet.status, zombie_id: @zweet.zombie_id }
     assert_redirected_to zweet_path(assigns(:zweet))
   end
 

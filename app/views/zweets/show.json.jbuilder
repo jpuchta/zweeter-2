@@ -1,1 +1,1 @@
-json.extract! @zweet, :id, :status, :created_at, :updated_at
+json.extract! @zweet, :id, :status, :zombie_id, :created_at, :updated_at

@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Status</th>
+      <th>Zombie</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,6 +15,7 @@
     <% @zweets.each do |zweet| %>
       <tr>
         <td><%= zweet.status %></td>
+        <td><%= zweet.zombie %></td>
         <td><%= link_to 'Show', zweet %></td>
         <td><%= link_to 'Edit', edit_zweet_path(zweet) %></td>
         <td><%= link_to 'Destroy', zweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

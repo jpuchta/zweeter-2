@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140118180755) do
+ActiveRecord::Schema.define(version: 20140118191338) do
 
-  create_table "zweets", force: true do |t|
-    t.string   "status"
+  create_table "zombies", force: true do |t|
+    t.string   "name"
+    t.string   "grave"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "zweets", force: true do |t|
+    t.string   "status"
+    t.integer  "zombie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "zweets", ["zombie_id"], name: "index_zweets_on_zombie_id"
 
 end
