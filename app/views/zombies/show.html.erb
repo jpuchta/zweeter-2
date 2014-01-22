@@ -10,5 +10,18 @@
   <%= @zombie.grave %>
 </p>
 
-<%= link_to 'Edit', edit_zombie_path(@zombie) %> |
-<%= link_to 'Back', zombies_path %>
+<% if @zombie.zweets.empty? %>
+  <h2>No zweets :( </h2>
+<% else %>
+  <h2>Zweets:</h2>
+  <table>
+    <% @zombie.zweets.each do |z| %>
+      <tr>
+        <td><%= link_to z.status, zweet_path(z) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<p> <%= link_to "Add zweet", new_zweet_path(:zombie=>@zombie) %> </p>
+
+<%= link_to 'Edit', edit_zombie_path(@zombie) %>

@@ -10,11 +10,13 @@ class ZweetsController < ApplicationController
   # GET /zweets/1
   # GET /zweets/1.json
   def show
+#    render :action => 'status'
   end
 
   # GET /zweets/new
   def new
     @zweet = Zweet.new
+    @zweet.zombie_id = params[:zombie] if params[:zombie]
   end
 
   # GET /zweets/1/edit

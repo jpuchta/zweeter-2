@@ -2,6 +2,10 @@ Zweeter2::Application.routes.draw do
   resources :zombies
 
   resources :zweets
+  
+  #match '/all' => 'zweets#index', :as => 'all_zweets'
+  
+  root :to => 'zweets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
