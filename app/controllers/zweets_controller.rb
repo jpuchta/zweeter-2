@@ -4,7 +4,11 @@ class ZweetsController < ApplicationController
   # GET /zweets
   # GET /zweets.json
   def index
-    @zweets = Zweet.all
+    if params[:grave]
+      @zweets = Zweet.all.select {|z| z.zombie.grave == params[:grave] }
+    else
+      @zweets = Zweet.all
+    end
   end
 
   # GET /zweets/1

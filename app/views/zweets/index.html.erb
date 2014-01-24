@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Status</th>
       <th>Zombie</th>
       <th></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @zweets.each do |zweet| %>
       <tr>
+        <td><%= zweet.id %></td>
         <td><%= zweet.status %></td>
         <td><%= link_to zweet.zombie.name, zombie_path(zweet.zombie) %></td>
         <td><%= link_to 'Show', zweet %></td>
@@ -23,6 +25,7 @@
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 

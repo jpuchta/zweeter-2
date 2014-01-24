@@ -1,9 +1,15 @@
 Zweeter2::Application.routes.draw do
   resources :zombies
 
+  match '/all_zombies' => redirect('zombies#index'), :as => 'all_zombies', :via => [:get, :post]  
+  
   resources :zweets
   
-  #match '/all' => 'zweets#index', :as => 'all_zweets'
+  get '/new_zweet' => 'zweets#new'
+  
+  match '/all' => 'zweets#index', :as => 'all_zweets', :via => [:get, :post]
+  
+  match '/local_zweets/:grave' => 'zweets#index', :as => 'local_zweets', :via => [:get, :post]
   
   root :to => 'zweets#index'
 

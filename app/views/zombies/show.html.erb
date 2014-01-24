@@ -23,5 +23,6 @@
   </table>
 <% end %>
 <p> <%= link_to "Add zweet", new_zweet_path(:zombie=>@zombie) %> </p>
+<p> <%= link_to "Show zweets of #{@zombie.name}'s neighbours", local_zweets_path(@zombie.grave)%></p>
 
 <%= link_to 'Edit', edit_zombie_path(@zombie) %>

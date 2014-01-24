@@ -25,6 +25,8 @@ class ZombiesController < ApplicationController
   # POST /zombies.json
   def create
     @zombie = Zombie.new(zombie_params)
+    
+    Zweet.create({:status => welcome_message, :zombie => @zombie})
 
     respond_to do |format|
       if @zombie.save
@@ -35,6 +37,7 @@ class ZombiesController < ApplicationController
         format.json { render json: @zombie.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /zombies/1
@@ -71,4 +74,9 @@ class ZombiesController < ApplicationController
     def zombie_params
       params.require(:zombie).permit(:name, :grave)
     end
+    
+    def welcome_message
+      "#{@zombie.name} from #{@zombie.grave} joined the zweeter."
+    end
+    
 end
